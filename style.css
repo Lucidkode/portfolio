@@ -1,0 +1,2203 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+/*-------------------------------------------
+     Index
+-------------------------------------------*/
+/*
+    1.  Color palette
+    2.  Reset & Clearfix
+    3.  Global styles
+    4.  Header
+          4.1 Brand
+          4.2 Navigation
+    5.  Tagline
+    6.  Main Page Sections
+    7.  Portfolio
+          7.1 Selector
+          7.2 Selected work
+          7.3 Preview Window
+    8.  About
+    9.  Contact
+   10.  Welcome Modal
+   11.  Footer
+   12.  Transitions & Animations
+*/
+
+/*-------------------------------------------
+     1. Color Palette
+-------------------------------------------*/
+/*
+    Blackish    #151514     rgb(21, 21, 20)       
+    Whiteish    #FBFBFB     rgb(251, 251, 251)    
+    Greyish     #4D4D4B     rgb(77, 77, 75)       
+    Teal_pale   #378999     rgb(55, 137, 153)  
+    Teal_dark   #194C60     rgb(25, 76, 96)       
+    Orange      #E38D04     rgb(227, 141, 4)      
+    Yellow      #E5D647     rgb(229, 214, 71)     
+*/
+
+/*-------------------------------------------
+     2. Reset & Clearfix
+-------------------------------------------*/
+html,
+body,
+div,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+label,
+input,
+textarea,
+button,
+table,
+tr,
+td,
+th {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+  background: none;
+}
+
+/* Micro Clearfix by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/  */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+/*-------------------------------------------
+     3. Global styles
+-------------------------------------------*/
+html { 
+    background: url(http://www.annemariedufour.com/_img/paper_@2X_mySite.jpg) repeat;
+    background-size: 300px auto;
+    overflow-x: hidden;
+}
+body {
+    font: 100% Roboto, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #151514;
+}
+h1, h2, h3, label, input, textarea {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    color: #194C60;
+}
+h1,h2,h3 {
+    font-size: 1.2rem;
+}
+h1, h3 {
+    text-transform: uppercase;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: justify;
+}
+p span {
+    color: #378999;
+}
+a, a:visited {
+    color: #151514;
+}
+a:hover {
+    color: #378999;
+    cursor: pointer;
+}
+.skip {
+	position: absolute;
+	left: -9000em;
+}
+
+@media only screen and (min-width: 681px) {
+    p {
+        font-size: 1.2em;
+        line-height: 1.8rem;
+        text-align: left;
+    }
+}  
+
+/*-------------------------------------------
+     4. Header
+-------------------------------------------*/
+header {
+    position: fixed; top: 0; left: 0;
+    z-index: 10;
+    background: rgba(254,254,254,.97);
+    width: 100%;
+}
+.boxshadow header {
+    box-shadow: 0px 5px 4px rgba(55,137,153,.3);
+}
+
+@media only screen and (max-width: 980px) {
+    header {
+        height: 8.125rem;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    header {
+        height: 11.25rem;
+    }  
+}
+
+/*- 4.1 Brand -------------------------------*/
+header div#brand {
+    z-index: 15; 
+    text-align: center;
+}
+header img#logo:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+header h1 {
+    opacity: .8;
+}
+
+@media only screen and (max-width: 980px) {
+    header div#brand {
+        position: fixed; top: 10px; left: 25%;
+        width: 12.5rem; 
+    }
+    header img#logo {
+        height: 3.125rem; 
+        padding-bottom: .625rem;
+    }
+    header h1 {
+        font-size: .8rem;
+    }
+    header img#tagline {
+        margin: -.8rem 0 0 -2.8rem;
+        width: 260px;
+        height: 50px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 0px;
+        background-size: 100% auto;
+    }
+}
+
+@media only screen and (min-width: 681px) and (max-width: 980px) {
+    header div#brand {
+        position: fixed; top: 0.625rem; left: 35%; 
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    header div#brand {
+        position: fixed; top: 20px; left: 34%;
+        width: 25rem; 
+    }
+    header img#logo {
+        height: 4.7rem; 
+        padding-bottom: .625rem;
+    }
+    header h1 {
+        font-size: 1rem;
+    }
+    header img#tagline {
+        margin: -1.2rem 0 0 -2.3rem;
+        width: 330px;
+        height: 70px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 0px;
+        background-size: 100% auto;
+    }
+}
+
+/*- 4.2 Navigation --------------------------*/
+
+@media only screen and (max-width: 980px) {
+    div.shopToggleMenu {
+        position: fixed; right: 15%; top: 1.5rem;
+        z-index: 190;
+        width: 5%;
+    }
+    div.shopToggleMenu h3 {   
+        opacity: .7;
+        transition: opacity .5s ease-in-out;
+    }
+    div.shopToggleMenu h3.toggled {   
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+    }
+    nav ul.menu {
+        position: fixed; right: -9000em; top: 70px;
+        background: rgb(254,254,254);
+        padding: 1em 2.5rem;
+        line-height: 3em;  
+        text-align: right;  
+        opacity: 0;
+        height: 10em;
+        border-radius: 10px;
+        transition: opacity .5s ease-in-out;
+    }
+    .boxshadow nav ul.menu {
+        box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+    }
+    nav ul.expand {
+        right: 0;
+        z-index: 2000;
+    }
+    nav ul.transAfter {
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+    }
+    nav ul.menu li a:hover, nav ul li a.navSelected {
+        padding-bottom: .4rem;
+    }
+}
+ 
+@media only screen and (min-width: 981px) {
+    div.shopToggleMenu {
+        display: none;
+    }
+    nav ul.menu {
+        position: fixed; right: 5%; top: 3.125rem;
+        z-index: 2000;
+    }
+    nav ul.menu li {
+        display: inline-block;
+    }
+    nav ul.menu li a {
+        padding: .5rem .8rem .2rem;
+        padding-bottom: .2rem;
+        border-bottom: 0px solid rgba(55, 137, 153, 0);
+        transition: all .2s ease-out;
+    }
+    nav ul.menu li a:hover, nav ul li a.navSelected {
+        padding-bottom: .6rem;
+    }
+}
+
+nav ul.menu li a:hover, nav ul li a.navSelected {
+    border-bottom: 4px solid rgba(55, 137, 153, 1);
+    color: rgba(55, 137, 153, 1);
+    transition: all .2s ease-out;
+}
+nav ul li a.navSelected:hover {
+    cursor: default;
+}
+
+
+
+/*-------------------------------------------
+     5. Tagline
+-------------------------------------------*/
+#banner {
+    position: relative;
+    z-index: 1;
+    margin: 0 10% 0 0;
+}
+
+@media only screen and (max-width: 980px) {
+    #banner {
+        margin-top: 10rem;
+        width: 90%;
+        padding: 0 0 0 10%; 
+    }
+    #banner p.tagp {
+        margin: 0 auto;
+        font-weight: 100;
+        text-align: left;
+        padding-left: 0;
+    }
+    #banner p.tagp:last-of-type {
+        padding: .2rem 0 0 30%;
+    }
+    main.TY #banner {
+        width: 80%;
+        margin: 8.125rem auto 5rem;
+    } 
+    main.TY #banner img#thankYou {
+        margin: 3rem 0 1rem;
+        width: 300px;
+        height: 60px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -170px;
+        background-size: 100% auto;
+    }
+    main.TY #banner p.tagp {
+        margin-left: -3rem;
+        padding: 0;
+        text-align: center;
+        line-height: 2rem;
+    }
+    #banner img#delightfulDetails {
+        margin: 1rem 0 1rem 1rem;
+        width: 300px;
+        height: 40px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -45px;
+        background-size: 70% auto;
+    }
+    #banner img#memorableExperience {
+        margin: 1rem 0 1rem 2rem;
+        width: 220px;
+        height: 35px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -87px;
+        background-size: 100% auto;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 680px) {
+    #banner img#delightfulDetails {
+        margin: 1rem 0 1rem 2rem;
+        width: 300px;
+        height: 45px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -50px;
+        background-size: 80% auto;
+    }
+    #banner img#memorableExperience {
+        margin: 1rem 0 1rem 5rem;
+        width: 300px;
+        height: 40px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -105px;
+        background-size: 88% auto;
+    }
+}
+
+@media only screen and (min-width: 681px) and (max-width: 980px) {
+    main.index #banner {
+        margin-top: 12rem;
+        height: 300px;
+        width: 70%;
+        padding: 0% 0 0 22%;
+    } 
+    #banner p.tagp {
+        padding-left: 1rem;
+        font-size: 1.5rem;
+    }
+    main.TY #banner p.tagp {
+        font-size: 1.4rem;
+    }
+    #banner p.tagp:last-of-type {
+        padding: .2rem 0 0 30%;
+    }
+    main.TY #banner img#thankYou {
+        margin: 5rem 0 1rem 3rem;
+        width: 400px;
+        height: 80px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -230px;
+        background-size: 100% auto;
+    }
+    #banner img#delightfulDetails {
+        margin: 1rem 0 1rem 3rem;
+        width: 500px;
+        height: 70px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -70px;
+        background-size: 70% auto;
+    }
+    #banner img#memorableExperience {
+        margin: 1rem 0 1rem 5rem;
+        width: 500px;
+        height: 50px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -150px;
+        background-size: 77% auto;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    main.index #banner {
+        margin-top: 15rem;
+        height: 450px;
+        padding: 4% 0 0 25%; 
+    } 
+    main.TY #banner {
+        padding: 15% 0 10% 25%; 
+    } 
+    #banner p.tagp {
+        font-size: 1.8rem;
+        font-weight: 100;
+    }
+    main.TY #banner p.tagp {
+        font-size: 1.4rem;
+    }
+    main.TY #banner p.tagp:first-of-type {
+        padding: 1.5rem 0 1.5rem 20%;
+    }
+    #banner p.tagp:last-of-type {
+        padding-left: 60%;
+    }
+    main.TY #banner p.tagp:last-of-type {
+        padding: 1.5rem 0 1.5rem 40%;
+    }
+    main.TY #banner img#thankYou {
+        margin: 8rem 0 1rem 3rem;
+        width: 450px;
+        height: 70px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -270px;
+        background-size: 100% auto;
+    }
+    #banner img#delightfulDetails {
+        margin: 1rem 0 1rem 8rem;
+        width: 500px;
+        height: 90px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -90px;
+        background-size: 90% auto;
+    }
+    #banner img#memorableExperience {
+        margin: 1rem 0 1rem 13rem;
+        width: 500px;
+        height: 80px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 0 -200px;
+        background-size: 100% auto;
+    }
+}
+
+img#flower {
+    position: absolute;
+            //top: 0;
+    //left: -9000rem;
+    display: none;
+}
+
+@media only screen and (min-width: 681px) {
+    img#flower {
+        top: 2rem;
+        left: 0;
+        height: 450px;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    img#flower {
+        top: 4rem;
+        height: 650px;
+    }
+}
+
+/*-------------------------------------------
+     6. Main page sections
+-------------------------------------------*/
+.mainSection:nth-of-type(even) {
+    background: url(http://www.annemariedufour.com/_img/separation.svg) no-repeat top center;
+    background-size: 100% auto;
+}
+.mainSection:nth-of-type(odd) {
+    background: url(http://www.annemariedufour.com/_img/separationFlipped.svg) no-repeat top center;
+    background-size: 100% auto;
+}
+.mainSection h1, .mainSection h2 {
+    text-align: center;
+}
+.mainSection div p {
+    padding: .5rem 0;
+}
+
+@media only screen and (max-width: 980px) {
+    .mainSection {
+        margin: 5rem 10%;
+        padding: 8rem 0;
+    }
+    .mainSection h1 {
+        font-size: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .mainSection h2 {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .mainSection img {
+        width: 70%; 
+        padding: 2rem 10% 1rem;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    .mainSection {
+        margin: 5rem 10%;
+        padding: 15% 0;
+    }
+    .mainSection h1 {
+        font-size: 2rem;
+        padding-bottom: 3rem;
+    }
+    .mainSection h2 {
+        font-size: 1.2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/*-------------------------------------------
+     7. Portfolio
+-------------------------------------------*/
+/*- 7.1 Selector -------------------------*/
+div#PFMenu {
+    margin: 0 auto 1rem;
+    padding: .5rem 0;
+    width: 95%;
+    max-width: 320px;
+}
+div#PFMenu h2 {
+    padding: 0 0 .5rem;
+}
+div#PFMenu button {
+    margin: 0 1.6%;
+    float: left;
+    border-radius: 10px;
+    width: 30%;
+    height: 2.3rem;
+    font-size: .6rem;
+    transition: all .5s ease-out;
+}
+div#PFMenu button:hover, div#PFMenu button.selected {
+    cursor: pointer;
+    color: rgba(254,254,254,.9);
+    text-shadow: 1px 1px 0px rgba(21,21,20,.2);
+    font-weight: 400;
+    height: 3rem;
+    transition: all .5s ease-out;
+}
+div#PFMenu button#buttonJsApp {
+    background: rgba(55,137,153,.6);
+}
+div#PFMenu button#buttonJsApp:hover, div#PFMenu button#buttonJsApp.selected {
+    background: rgba(55,137,153,1);
+}
+div#PFMenu button#buttonBrandID {
+    background: rgba(227,141,4,.6);
+}
+div#PFMenu button#buttonBrandID:hover, div#PFMenu button#buttonBrandID.selected {
+    background: rgba(227,141,4,1);
+}
+div#PFMenu button#buttonWebDD {
+    background: rgba(77,77,75,.6);
+}
+div#PFMenu button#buttonWebDD:hover, div#PFMenu button#buttonWebDD.selected {
+    background: rgba(77,77,75,1);
+}
+div#PFMenu button.selected:hover {
+    cursor: default;
+}
+
+@media only screen and (min-width: 681px) {
+    div#PFMenu {
+        width: 550px;
+        max-width: 600px;
+    }
+    div#PFMenu h2 {
+        font-size: 1.2rem;
+        padding: 0 0 1rem;
+    }
+    div#PFMenu button {
+        margin: 0 1.6%;
+        width: 30%;
+        height: 3.5rem;
+        font-size: 1rem;
+    }
+    div#PFMenu button:hover, div#PFMenu button.selected {
+        height: 5rem;
+    }
+}
+
+/*- 7.2 Selected work---------------------*/
+
+div.PFthumb img {   
+    display: block;
+    padding: 0;
+    margin: 0 auto .5rem;
+    height: auto;
+    background-image: url(http://www.annemariedufour.com/_img/spritePFLowRes.jpg);
+    -webkit-filter: blur(2px);
+       -moz-filter: blur(2px);
+         -o-filter: blur(2px);
+            filter: blur(2px);
+}
+div.PFWrapper {
+    border-radius: 20px;
+}
+div.PFthumb, div.PFthumb img {
+    border-radius: 10px;
+}
+div.PFthumb h3 {
+    padding: .2rem 0;
+    font-size: .7rem;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+div.PFthumb h4 span, div.PFthumb img.previewImg {
+    display: none;
+}
+div.PFthumb p {
+    position: absolute;
+    left: -9000em;
+}
+
+@media only screen and (max-width: 680px) {
+    .PFWrapper h2 {
+        padding: 5% 0 1%;
+        font-size: 1rem;
+    }
+    .PortfolioSubWrapper {
+        margin: 0 auto;
+        width: 120%;
+        margin-left: -4%;
+    }
+    .PortfolioSubWrapper#gamesWrapper, .PortfolioSubWrapper#webDDWrapper {
+        margin-left: 14%;
+    }
+    div.PFthumb {
+        position: relative;
+        float: left;
+        margin: 1rem 0;
+        width: 30%;
+        height: 20%;
+    }
+    div.PFthumb h4 {
+        display: none;
+    }
+    div.PFthumb img {
+        width: 80px;
+        background-size: 250px auto;
+    }
+    
+    div.PFthumb img#simonImg {
+        background-position: -27px -24px;
+    }
+    div.PFthumb img#ticTacToeImg {
+        background-position: -143px -23px;
+    }
+    div.PFthumb img#wikiImg {
+        background-position: -27px -130px;
+    }
+    div.PFthumb img#CamperNewsImg {
+        background-position: -143px -135px;
+    }
+    div.PFthumb img#weatherImg {
+        background-position: -27px -249px;
+    }
+    div.PFthumb img#calculatorImg {
+        background-position: -143px -258px;
+    }
+    div.PFthumb img#pomodoroImg {
+        background-position: -27px -363px;
+    }
+    div.PFthumb img#quoteImg {
+        background-position: -143px -368px;
+    }
+    div.PFthumb img#yigBrandImg {
+        background-position: -27px -488px;
+    }
+    div.PFthumb img#titanBrandImg {
+        background-position: -143px -485px;
+    }
+    div.PFthumb img#egkBrandImg {
+        background-position: -27px -603px;
+    }
+    div.PFthumb img#yigSiteImg {
+        background-position: -143px -600px;
+    }
+    div.PFthumb img#egkSiteImg {
+        background-position: -18px -710px;
+    }
+    
+}
+
+@media only screen and (min-width: 475px) and (max-width: 680px) {
+    div.PFthumb img {
+        width: 120px;
+        background-size: 400px auto;
+    }
+    
+    div.PFthumb img#simonImg {
+        background-position: -48px -48px;
+    }
+    div.PFthumb img#ticTacToeImg {
+        background-position: -232px -42px;
+    }
+    div.PFthumb img#wikiImg {
+        background-position: -48px -216px;
+    }
+    div.PFthumb img#CamperNewsImg {
+        background-position: -232px -217px;
+    }
+    div.PFthumb img#weatherImg {
+        background-position: -48px -403px;
+    }
+    div.PFthumb img#calculatorImg {
+        background-position: -232px -412px;
+    }
+    div.PFthumb img#pomodoroImg {
+        background-position: -48px -587px;
+    }
+    div.PFthumb img#quoteImg {
+        background-position: -232px -592px;
+    }
+    div.PFthumb img#yigBrandImg {
+        background-position: -48px -789px;
+    }
+    div.PFthumb img#titanBrandImg {
+        background-position: -232px -781px;
+    }
+    div.PFthumb img#egkBrandImg {
+        background-position: -48px -972px;
+    }
+    div.PFthumb img#yigSiteImg {
+        background-position: -232px -970px;
+    }
+    div.PFthumb img#egkSiteImg {
+        background-position: -30px -1139px;
+    }
+}
+
+@media only screen and (min-width: 681px) {
+    .PFWrapper h2 {
+        margin-top: 1rem; 
+        padding: 3rem 2rem .5rem;
+        font-size: 1.3rem;
+    }
+    .PFWrapper h2:nth-of-type(1) {
+        margin-top: 0; 
+        padding-top: 2rem;
+    }
+    .PFWrapper h2:nth-of-type(2) {
+        background: url(http://www.annemariedufour.com/_img/separationFlipped.svg) no-repeat top center;
+        background-size: 60% auto;
+    }
+    .PFWrapper h2:nth-of-type(3) {
+        background: url(http://www.annemariedufour.com/_img/separation.svg) no-repeat top center;
+        background-size: 80% auto;
+    }
+    .PortfolioSubWrapper {
+        margin: 0 auto;
+        width: 546px;
+    }
+    .PortfolioSubWrapper#gamesWrapper, .PortfolioSubWrapper#webDDWrapper {
+        width: 348px;
+    }
+    div.PFthumb {
+        box-sizing: border-box;
+        float: left;
+        margin: 1rem 2%;
+        width: 160px;
+        height: 220px;
+        background: rgb(254,254,254);
+        border: 2px solid rgba(25,76,96,0);
+        box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+    }
+    div.PFthumb h3 {
+        padding: .5rem .8rem .2rem;
+        text-align: left;
+    }
+    div.PFthumb h4 {
+        padding: 0 .8rem 1rem;
+        font-size: .6rem;
+        color: #4D4D4B;
+    }
+    div.PFWrapper {
+        padding-bottom: 2rem;
+    }
+    div.PFWrapper:hover {
+        background: rgba(21, 21, 20, .02);
+    }
+    div.PFWrapper:hover div.PFthumb:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    div.PFWrapper:hover div.PFthumb:hover {
+        border: 2px solid rgba(25,76,96,.6);
+    }
+    div.PFthumb:hover h3 {
+        color: #378999; 
+    }
+    div.PFthumb:hover h4 {
+        color: #151514; 
+    }
+    div.PFWrapper, div.PFWrapper:hover div.PFthumb, div.PFWrapper:hover div.PFthumb:hover, div.PFWrapper:hover div.PFthumb:hover img {
+        transition: all .2s ease-out;
+    }
+    div.PFthumb img {
+        margin: .6rem auto .5rem;
+        width: 140px;
+        height: auto;
+        border: 2px solid rgba(25,76,96,0);
+        background-size: 480px auto;
+    }
+    
+    div.PFthumb img#simonImg {
+        background-position: -59px -60px;  
+    }
+    div.PFthumb img#ticTacToeImg {
+        background-position: -282px -52px;
+    }
+    div.PFthumb img#wikiImg {
+        background-position: -59px -260px;
+    }
+    div.PFthumb img#CamperNewsImg {
+        background-position: -282px -260px;
+    }
+    div.PFthumb img#weatherImg {
+        background-position: -59px -485px;
+    }
+    div.PFthumb img#calculatorImg {
+        background-position: -282px -495px;
+    }
+    div.PFthumb img#pomodoroImg {
+        background-position: -59px -705px;
+    }
+    div.PFthumb img#quoteImg {
+        background-position: -282px -716px;
+    }
+    div.PFthumb img#yigBrandImg {
+        background-position: -59px -949px;
+    }
+    div.PFthumb img#titanBrandImg {
+        background-position: -282px -938px;
+    }
+    div.PFthumb img#egkBrandImg {
+        background-position: -59px -1167px;
+    }
+    div.PFthumb img#yigSiteImg {
+        background-position: -282px -1170px;
+    }
+    div.PFthumb img#egkSiteImg {
+        background-position: -40px -1368px;
+    }
+    
+}
+
+@media only screen and (min-width: 981px) {
+    .PFWrapper h2 {
+        margin-top: 2rem; 
+        padding: 4rem 2rem .5rem;
+        font-size: 1.4rem;
+    }
+    .PFWrapper h2:nth-of-type(2), #PortfolioBrandID h2 {
+        background-size: 60% auto;
+    }
+    .PFWrapper h2:nth-of-type(3), #PortfolioWebDD h2 {
+        background-size: 60% auto;
+    }
+    .PortfolioSubWrapper {
+        width: 771px;
+    }
+    .PortfolioSubWrapper#gamesWrapper, .PortfolioSubWrapper#webDDWrapper {
+        width: 487px;
+    }
+    div.PFthumb {
+        margin: 1rem 2.4%;
+        width: 220px;
+        height: 280px;
+    }
+    div.PFthumb h3 {padding: .2rem 0;
+        padding: .5rem 1rem .2rem;
+        font-size: 1rem;
+    }
+    div.PFthumb h4 {
+        padding: 0 1rem 1rem;
+        font-size: .8rem;
+    }
+    div.PFthumb img {
+        width: 200px;
+        background-size: 650px auto;
+    }
+    
+    div.PFthumb img#simonImg {
+        background-position: -75px -65px;
+    }
+    div.PFthumb img#ticTacToeImg {
+        background-position: -375px -65px;
+    }
+    div.PFthumb img#wikiImg {
+        background-position: -75px -340px;
+    }
+    div.PFthumb img#CamperNewsImg {
+        background-position: -375px -355px;
+    }
+    div.PFthumb img#weatherImg {
+        background-position: -75px -655px;
+    }
+    div.PFthumb img#calculatorImg {
+        background-position: -375px -675px;
+    }
+    div.PFthumb img#pomodoroImg {
+        background-position: -75px -955px;
+    }
+    div.PFthumb img#quoteImg {
+        background-position: -375px -970px;
+    }
+    div.PFthumb img#yigBrandImg {
+        background-position: -75px -1275px;
+    }
+    div.PFthumb img#titanBrandImg {
+        background-position: -375px -1265px;
+    }
+    div.PFthumb img#egkBrandImg {
+        background-position: -75px -1575px;
+    }
+    div.PFthumb img#yigSiteImg {
+        background-position: -375px -1575px;
+    }
+    div.PFthumb img#egkSiteImg {
+        background-position: -52px -1852px;
+    }
+    
+}
+.PFWrapper section {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+.PFWrapper section.hidden {
+    position: absolute;
+    left: -9000em;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+img#PFHighResImg {
+    position: absolute;
+    left: -9000em;
+}
+
+
+/*- 7.3 Preview Window--------------------*/
+div.preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: rgba(21, 21, 20, .8);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+div.preview div.PFBox {
+    position: relative;
+    margin: 3% auto;
+    width: 90%;
+    height: 90%;
+    background: url(http://www.annemariedufour.com/_img/paper_@2X_mySite.jpg) repeat;
+    background-size: 300px auto;
+    -webkit-transform: scale(0);
+       -moz-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0);
+}
+div.preview div.old {
+    overflow-y: scroll;
+}
+div.preview div.PFBox, div.preview img {
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+}
+div.preview img, div.preview div.PFTitles {
+    margin: 1rem auto;
+    padding: 0;
+}
+div.preview div.PFBox, div.preview img.PFImage {
+    border: 2px solid rgba(25,76,96,.8);
+}
+div.preview div.PFTitles {
+    width: 80%;
+    height: 50%;
+}
+div.preview img {
+    display: block;
+    height: auto;
+    background-image: url(http://www.annemariedufour.com/_img/spritePFLowRes.jpg);
+}
+div.preview h3 {
+    margin: 0 0 .6rem;
+    font-size: 1.2rem;
+    color: rgba(25,76,96,.8);
+}
+div.preview h3, div.preview h4 {
+    text-align: center;
+}
+div.preview h4 {
+    color: rgb(55,137,153);
+}
+div.preview h4, div.preview p {
+    font-size: .8rem;
+}
+div.PFText {
+    height: 80%;
+    margin: .7rem 0;
+    position: relative;
+}
+.old div.PFText {
+    overflow-y: scroll;
+}
+div.PFText p {
+    margin: .5rem 0;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1.2rem;
+}
+div.PFText p span {
+    font-weight: 400;
+    color: #151514;
+}
+div.PFText li {
+    padding-left: 1rem;
+}
+div.PFText p a {
+    color: rgb(55,137,153);
+}
+div.preview img.previewImg{
+    display: block;
+    height: auto;
+    background-image: url(http://www.annemariedufour.com/_img/spriteTitanId.jpg);
+    border: none;
+    box-shadow: none;
+}
+div.preview button.closePreviewButt {
+    position: absolute;
+    z-index: 1000;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: #151514;
+    border-radius: 50%;
+    color: #FBFBFB;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: .2rem;
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-out;
+       -moz-transition: all .2s ease-out;
+         -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+}
+div.preview button:hover {
+    cursor: pointer;
+}
+div.preview button.closePreviewButt:hover {
+    cursor: pointer;
+    font-weight: 400;
+    color: rgb(55,137,153);
+    -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+         -o-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: all .2s ease-out;
+       -moz-transition: all .2s ease-out;
+         -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+}
+
+@media only screen and (min-width: 940px) {
+    div.preview img, div.preview div.PFTitles {
+        margin: 4%;
+    }
+    div.preview img {
+        display: block;
+        float: left;
+        margin-top: 6rem;
+        height: auto;
+    }
+    div.preview img.previewImg {
+        float: none;
+    }
+    div.preview div.PFTitles {
+        width: 91%;
+        height: 91%;
+    }
+    div.preview h3 {
+        margin: 1rem 0 .8rem;
+        padding-top: 1rem;
+        font-size: 1.6rem;
+    }
+    div.preview h4 {
+        margin-bottom: 1rem;
+    }
+    div.preview h4, div.preview p {
+        font-size: 1rem;
+    }
+    div.PFText {
+        margin: .7rem 0;
+        position: relative;
+        //overflow-y: scroll;
+    }
+    div.PFText p {
+        margin: .5rem 0;
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    div.preview img {
+        width: 100px;
+        background-size: 330px auto;
+    }
+    
+    div.preview img#simonImg {
+        background-position: -39px -40px;
+    }
+    div.preview img#ticTacToeImg {
+        background-position: -191px -35px;
+    }
+    div.preview img#wikiImg {
+        background-position: -39px -175px;
+    }
+    div.preview img#CamperNewsImg {
+        background-position: -191px -180px;
+    }
+    div.preview img#weatherImg {
+        background-position: -39px -332px;
+    }
+    div.preview img#calculatorImg {
+        background-position: -191px -340px;
+    }
+    div.preview img#pomodoroImg {
+        background-position: -39px -485px;
+    }
+    div.preview img#quoteImg {
+        background-position: -191px -490px;
+    }
+    div.preview img#yigBrandImg {
+        background-position: -39px -647px;
+    }
+    div.preview img#titanBrandImg {
+        background-position: -191px -645px;
+    }
+    div.preview img#egkBrandImg {
+        background-position: -39px -800px;
+    }
+    div.preview img#yigSiteImg {
+        background-position: -191px -800px;
+    }
+    div.preview img#egkSiteImg {
+        background-position: -30px -940px;
+    }
+    
+}
+
+@media only screen and (min-width: 451px) and (max-width: 940px) {
+    div.preview img {
+        width: 220px;
+        background-size: 620px auto;
+    }
+    
+    div.preview img#simonImg {
+        background-position: -57px -56px;
+    }
+    div.preview img#ticTacToeImg {
+        background-position: -344px -56px;
+    }
+    div.preview img#wikiImg {
+        background-position: -57px -328px;
+    }
+    div.preview img#CamperNewsImg {
+        background-position: -344px -336px;
+    }
+    div.preview img#weatherImg {
+        background-position: -57px -623px;
+    }
+    div.preview img#calculatorImg {
+        background-position: -344px -625px;
+    }
+    div.preview img#pomodoroImg {
+        background-position: -57px -915px;
+    }
+    div.preview img#quoteImg {
+        background-position: -344px -900px;
+    }
+    div.preview img#yigBrandImg {
+        background-position: -57px -1200px;
+    }
+    div.preview img#titanBrandImg {
+        background-position: -344px -1195px;
+    }
+    div.preview img#egkBrandImg {
+        background-position: -57px -1485px;
+    }
+    div.preview img#yigSiteImg {
+        background-position: -344px -1480px;
+    }
+    div.preview img#egkSiteImg {
+        background-position: -49px -1765px;
+    }
+    
+}
+
+@media only screen and (min-width: 941px) and (max-width: 1180px) {
+    div.preview img {
+        width: 250px;
+        background-size: 750px auto;
+    }
+    
+    div.preview img#simonImg {
+        background-position: -77px -66px;
+    }
+    div.preview img#ticTacToeImg {
+        background-position: -424px -70px;
+    }
+    div.preview img#wikiImg {
+        background-position: -77px -410px;
+    }
+    div.preview img#CamperNewsImg {
+        background-position: -424px -410px;
+    }
+    div.preview img#weatherImg {
+        background-position: -77px -750px;
+    }
+    div.preview img#calculatorImg {
+        background-position: -424px -770px;
+    }
+    div.preview img#pomodoroImg {
+        background-position: -77px -1100px;
+    }
+    div.preview img#quoteImg {
+        background-position: -424px -1100px;
+    }
+    div.preview img#yigBrandImg {
+        background-position: -77px -1460px;
+    }
+    div.preview img#titanBrandImg {
+        background-position: -424px -1455px;
+    }
+    div.preview img#egkBrandImg {
+        background-position: -77px -1806px;
+    }
+    div.preview img#yigSiteImg {
+        background-position: -424px -1800px;
+    }
+    div.preview img#egkSiteImg {
+        background-position: -60px -2136px;
+    }
+    
+    
+}
+
+@media only screen and (min-width: 1181px) {
+    div.preview img {
+        width: 400px;
+        background-size: 1050px auto;
+    }
+    
+    div.preview img#simonImg {
+        background-position: -84px -82px;
+    }
+    div.preview img#ticTacToeImg {
+        background-position: -568px -80px;
+    }
+    div.preview img#wikiImg {
+        background-position: -84px -550px;
+    }
+    div.preview img#CamperNewsImg {
+        background-position: -568px -570px;
+    }
+    div.preview img#weatherImg {
+        background-position: -84px -1050px;
+    }
+    div.preview img#calculatorImg {
+        background-position: -568px -1060px;
+    }
+    div.preview img#pomodoroImg {
+        background-position: -84px -1535px;
+    }
+    div.preview img#quoteImg {
+        background-position: -568px -1535px;
+    }
+    div.preview img#yigBrandImg {
+        background-position: -84px -2020px;
+    }
+    div.preview img#titanBrandImg {
+        background-position: -568px -2020px;
+    }
+    div.preview img#egkBrandImg {
+        background-position: -84px -2505px;
+    }
+    div.preview img#yigSiteImg {
+        background-position: -568px -2505px;
+    }
+    div.preview img#egkSiteImg {
+        background-position: -81px -2989px;
+    }
+}
+
+
+/*- 7.3 New Preview Window--------------------*/
+
+div.preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: rgba(21, 21, 20, .8);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+div.preview div.newPFBox {
+    position: relative;
+    margin: 0 auto;
+    background: url(http://www.annemariedufour.com/_img/paper_@2X_mySite.jpg) repeat;
+    background-size: 300px auto;
+    -webkit-transform: scale(0);
+       -moz-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0);
+}
+div.preview img.hideImage {
+    display: none;
+}
+div.preview div.newPFBox {
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+}
+div.newPFBox div.PFTitles {
+    margin: 0 auto;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+div.preview h3 {
+    margin: 0 0 .6rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(25,76,96,.8);
+}
+div.preview h3, div.preview h4 {
+    text-align: center;
+}
+div.preview h4 {
+    color: rgb(55,137,153);
+}
+div.preview h4 {
+    font-size: .8rem;
+}
+div.PFText {
+    height: 80%;
+    margin: .7rem 0;
+    position: relative;
+}
+div.PFText p {
+    margin: .5rem 0;
+    padding: 0;
+    font-size: .8rem;
+    line-height: 1.2rem;
+}
+div.PFText p:before {
+  content: "";
+  width: 10em;
+  display: block;
+  overflow: hidden;
+}
+div.PFText p span {
+    font-weight: 400;
+    color: #151514;
+}
+div.PFText p span.linkToPreview {
+    font-weight: 300;
+    color: rgb(55,137,153);
+}
+div.PFText p span.linkToPreview:hover {
+    cursor: pointer;
+}
+div.PFText li {
+    padding-left: 1rem;
+}
+div.PFText p a {
+    color: rgb(55,137,153);
+}
+div.preview img.previewImg{
+    display: block;
+    border: none;
+    box-shadow: none;
+    background-repeat: no-repeat;
+}
+div.preview button.closePreviewButt {
+    position: absolute;
+    z-index: 1000;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: #151514;
+    border-radius: 50%;
+    color: #FBFBFB;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-bottom: .2rem;
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all .2s ease-out;
+       -moz-transition: all .2s ease-out;
+         -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+}
+div.preview button:hover {
+    cursor: pointer;
+}
+div.preview button.closePreviewButt:hover {
+    cursor: pointer;
+    font-weight: 400;
+    color: rgb(55,137,153);
+    -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+         -o-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: all .2s ease-out;
+       -moz-transition: all .2s ease-out;
+         -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+}
+
+div.preview div.newPFBox img {
+    margin: .5rem auto;
+    width: 100%;
+    max-width: 500px;
+    height: 0;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Preview YIG Brand Id */
+div.preview img.previewYIGBrandId {
+    background-image: url(http://www.annemariedufour.com/_img/spriteYigBrandId.jpg);
+    background-size: 110%;
+}
+div.preview img#yigTree {
+    padding-bottom: 50%;
+    background-position: 40% 97%;
+}
+div.preview img#yigTypoAndPalette {
+    padding-bottom: 71.72%;
+    background-size: 100%;
+}
+div.preview img#yigLogo {
+    padding-bottom: 57.1%;
+    background-position: 40% 57.5%;
+}
+
+/* Preview Titan Brand Id */
+div.preview img.previewTitan {
+    background-image: url(http://www.annemariedufour.com/_img/spriteTitanId.jpg);
+}
+div.preview img#titanLogos {
+    background-size: 115%;
+    padding-bottom: 95%;
+    background-position: 50% 30%;
+}
+div.preview img#titanTypePaletteCard {
+    background-size: 108%;
+    padding-bottom: 63.55%;
+    background-position: 50% 1.5%;
+}
+div.preview img#titanSkectchesAndLogo {
+    background-size: 100%;
+    padding-bottom: 65%;
+    background-position: 50% 63.2%;
+}
+div.preview img#titanAssets {
+    background-size: 108%;
+    padding-bottom: 90%;
+    background-position: 50% 98.5%;
+}
+
+/* Preview Érdgépker Brand Id */
+div.preview img.previewEgkBrandId {
+    background-image: url(http://www.annemariedufour.com/_img/spriteEGKBrandId.jpg);
+}
+div.preview img#egkPalette {
+    background-size: 100%;
+    padding-bottom: 70%;
+    background-position: 50% 2.5%;
+}
+div.preview img#egkLogo {
+    background-size: 115%;
+    padding-bottom: 80%;
+    background-position: 50% 49%;
+}
+div.preview img#egkBizzCard {
+    background-size: 120%;
+    padding-bottom: 70%;
+    background-position: 50% 93%;
+}
+
+/* Preview YIG Website */
+div.preview img.previewYIGWebsite {
+    background-image: url(http://www.annemariedufour.com/_img/spriteYigWebsite.jpg);
+}
+div.preview img#yigPlan {
+    background-size: 100%;
+    padding-bottom: 29%;
+    background-position: 40% 1%;
+}
+div.preview img#yigMockup {
+    background-size: 120%;
+    padding-bottom: 72%;
+    background-position: 50% 18%;
+}
+div.preview img#yigLanding {
+    background-size: 100%;
+    padding-bottom: 50%;
+    background-position: 50% 45.5%;
+}
+div.preview img#yigMission, div.preview img#yigEnseignement {
+    background-size: 100%;
+    padding-bottom: 60%;
+}
+div.preview img#yigMission {
+    background-position: 40% 70%;
+}
+div.preview img#yigEnseignement {
+    background-position: 40% 98%;
+}
+
+/* Preview EGK Website */
+div.preview img.previewEgkWebsite {
+    background-image: url(http://www.annemariedufour.com/_img/spriteEGKWebsite.jpg);
+}
+div.preview img#egkLandingDesktop {
+    background-size: 114%;
+    padding-bottom: 71%;
+    background-position: 50% 1.7%;
+}
+div.preview img#egkLandingMobile {
+    background-size: 114%;
+    padding-bottom: 90%;
+    background-position: 50% 24.5%;
+}
+div.preview img#egkXtraPage1, div.preview img#egkXtraPage2, div.preview img#egkXtraPage3 {
+    background-size: 112%;
+    padding-bottom: 77%;
+}
+div.preview img#egkXtraPage1 {
+    background-position: 50% 51.8%;
+}
+div.preview img#egkXtraPage2 {
+    background-position: 50% 74.4%;
+}
+div.preview img#egkXtraPage3 {
+    background-position: 50% 97.1%;
+}
+
+
+@media only screen and (min-width: 500px) {
+    div.preview div.newPFBox img {
+        width: 400px;
+    }
+    div.preview img#yigTree {
+        padding-bottom: 200px;
+    }
+    div.preview img#yigTypoAndPalette {
+        padding-bottom: 286px;
+    }
+    div.preview img#yigLogo {
+        padding-bottom: 228px;
+    }
+    div.preview img#titanLogos {
+        padding-bottom: 377px;
+    }
+    div.preview img#titanTypePaletteCard {
+        padding-bottom: 254px;
+    }
+    div.preview img#titanSkectchesAndLogo {
+        padding-bottom: 274px;
+    }
+    div.preview img#titanAssets {
+        padding-bottom: 357px;
+    }
+    div.preview img#egkPalette {
+        padding-bottom: 285px;
+    }
+    div.preview img#egkLogo {
+        padding-bottom: 300px;
+    }
+    div.preview img#egkBizzCard {
+        padding-bottom: 270px;
+    }
+    div.preview img#yigPlan {
+        padding-bottom: 116px;
+    }
+    div.preview img#yigMockup {
+        padding-bottom: 300px;
+    }
+    div.preview img#yigLanding {
+        padding-bottom: 200px;
+    }
+    div.preview img#yigMission, div.preview img#yigEnseignement {
+        padding-bottom: 240px;
+    }
+    div.preview img#egkLandingDesktop {
+        padding-bottom: 283px;
+    }
+    div.preview img#egkLandingMobile {
+        padding-bottom: 360px;
+    }
+    div.preview img#egkXtraPage1, div.preview img#egkXtraPage2, div.preview img#egkXtraPage3 {
+        padding-bottom: 310px;
+    }
+}
+
+@media only screen and (min-width: 681px) {
+    div.preview h3 {
+        font-size: 1.4rem;
+    }
+    div.preview h4, div.preview p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    div.preview img.Left {
+        float: left;
+        margin-right: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    div.preview img.Right {
+        float: right;
+        margin-left: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    div.preview img#yigTree, div.preview img#yigTypoAndPalette, div.preview img#yigLogo, div.preview img#titanLogos, div.preview img#titanTypePaletteCard, div.preview img#titanSkectchesAndLogo, div.preview img#titanAssets, div.preview img#yigPlan, div.preview img#yigMockup, div.preview img#egkPalette, div.preview img#egkLogo, div.preview img#egkBizzCard, div.preview img#egkLandingDesktop, div.preview img#egkLandingMobile {
+        width: 40%;
+        max-width: 480px;
+    }
+    
+    /* Preview YIG Brand Id */
+    div.preview img#yigTree {
+        padding-bottom: 20%;
+    }
+    div.preview img#yigTypoAndPalette {
+        padding-bottom: 28.68%;
+    }
+    div.preview img#yigLogo {
+        padding-bottom: 22.86%;
+    }
+    
+    /* Preview Titan Brand Id */
+    div.preview img#titanLogos {
+        padding-bottom: 38%;
+    }
+    div.preview img#titanTypePaletteCard {
+        padding-bottom: 25.42%;
+    }
+    div.preview img#titanSkectchesAndLogo {
+        padding-bottom: 27%;
+    }
+    div.preview img#titanAssets {
+        padding-bottom: 36%;
+    }
+    
+    /* Preview Érdgépker Brand Id */
+    div.preview img#egkPalette {
+        padding-bottom: 28%;
+    }
+    div.preview img#egkLogo {
+        padding-bottom: 35%;
+    }
+    div.preview img#egkBizzCard {
+        padding-bottom: 26%;
+    }
+    
+    /* Preview YIG Website */
+    div.preview img#yigPlan {
+        padding-bottom: 11.5%;
+    }
+    div.preview img#yigMockup {
+        padding-bottom: 30%;
+    }
+    div.preview img#yigLanding {
+        width: 500px;
+        padding-bottom: 250px;
+    }
+    div.preview img#yigMission, div.preview img#yigEnseignement {
+        width: 500px;
+        padding-bottom: 310px;
+    }
+    
+    /* Preview EGK Website */
+    div.preview img#egkLandingDesktop {
+        padding-bottom: 28.4%;
+    }
+    div.preview img#egkLandingMobile {
+        max-width: 400px;
+        padding-bottom: 36%;
+    }
+    div#xtraPagesWrapper {
+        width: 98%;
+        margin-top: 4.5rem;
+    }
+    div.preview img#egkXtraPage1, div.preview img#egkXtraPage2, div.preview img#egkXtraPage3 {
+        display: inline-block;
+        margin: 0 1%;
+        width: 30%;
+        max-width: 480px;
+        padding-bottom: 23%;
+    }
+    
+}
+
+@media only screen and (min-width: 981px) {
+    div.preview h3 {
+        font-size: 1.6rem;
+    }
+    div.preview h4, div.preview p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    div#xtraPagesWrapper {
+        margin-top: 10rem;
+    }
+    div#sectionsYig {
+        margin: 2rem 0;
+        width: 98%;
+    }
+    div.preview img#yigMission, div.preview img#yigEnseignement {
+        display: inline-block;
+        width: 47%;
+        padding-bottom: 28.5%;
+        margin: 0 1%;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    div.preview img#yigTree, div.preview img#yigTypoAndPalette, div.preview img#yigLogo, div.preview img#titanLogos, div.preview img#titanTypePaletteCard, div.preview img#titanSkectchesAndLogo, div.preview img#titanAssets, div.preview img#yigPlan, div.preview img#egkPalette, div.preview img#egkLogo, div.preview img#egkBizzCard, div.preview img#egkLandingDesktop {
+        width: 480px;
+    }
+    div.preview img#yigTree {
+        padding-bottom: 228px;
+    }
+    div.preview img#yigTypoAndPalette {
+        padding-bottom: 344px;
+    }
+    div.preview img#yigLogo {
+        padding-bottom: 274px;
+    }
+    div.preview img#titanLogos {
+        padding-bottom: 452px;
+    }
+    div.preview img#titanTypePaletteCard {
+        padding-bottom: 305px;
+    }
+    div.preview img#titanSkectchesAndLogo {
+        padding-bottom: 330px;
+    }
+    div.preview img#titanAssets {
+        padding-bottom: 428px;
+    }
+    div.preview img#egkPalette {
+        padding-bottom: 340px;
+    }
+    div.preview img#egkLogo {
+        padding-bottom: 400px;
+    }
+    div.preview img#egkBizzCard {
+        padding-bottom: 330px;
+    }
+    div.preview img#yigPlan {
+        padding-bottom: 140px;
+    }
+    div.preview img#yigMockup {
+        width: 400px;
+        padding-bottom: 310px;
+    }
+    div.preview img#yigLanding {
+        margin-top: 6rem;
+    }
+    div.preview img#yigMission, div.preview img#yigEnseignement {
+        width: 450px;
+        padding-bottom: 280px;
+    }
+    div.preview img#egkLandingDesktop {
+        padding-bottom: 320px;
+    }
+    div.preview img#egkLandingMobile {
+        padding-bottom: 370px;
+    }
+}
+
+div.PFBox, div.newPFBox {
+    -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
+       -o-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+     -moz-animation-timing-function: ease-in;
+       -o-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: .3s;
+     -moz-animation-duration: .3s;
+       -o-animation-duration: .3s;
+          animation-duration: .3s;
+}
+div.openPreview {
+  -webkit-animation-name: openModal;
+     -moz-animation-name: openModal;
+       -o-animation-name: openModal;
+          animation-name: openModal;
+}
+div.closePreview {
+  -webkit-animation-name: closeModal;
+     -moz-animation-name: closeModal;
+       -o-animation-name: closeModal;
+          animation-name: closeModal;
+}
+
+/*-------------------------------------------
+     8. About
+-------------------------------------------*/
+section#about img {
+    margin: 1rem 1rem .5rem 1rem;
+    padding: 0;
+    float: right;
+    width: 40%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+p.download {
+    text-decoration: underline;
+    color: #378999;
+}
+
+@media only screen and (min-width: 981px) {
+    section#about div.bio {
+        width: 60%;
+    }
+}
+
+/*-------------------------------------------
+     9. Contact
+-------------------------------------------*/
+
+div.contacts a, div.contacts a:visited {
+    font-size: 1rem;
+    color: #194C60;
+}
+div.contacts a:hover {
+    color: #378999;
+}
+div.contacts a#email, div#contactIcons {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+}
+div#contactIcons {
+    margin-bottom: 2rem;
+}
+div#contactIcons i {
+    font-size: 2rem;
+    padding: 0 .5rem;
+}
+
+/*- 9.1 Form ------------------------------*/
+
+.formContent form {
+    width: 90%;
+    margin: 0 7.5%;
+    padding: 2rem 0;
+}
+label, input, textarea {
+    display: block;
+    background-color: rgba(55,137,153,.1);
+    padding: 2%;
+}
+.radius {
+    border-radius: 7px;
+}
+input:focus, textarea:focus {
+    outline: 3px solid rgba(55,137,153, .6);
+}
+#submit {
+    float: right;
+    width: 150px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #194C60;
+    margin: 10% 5% 0 0;
+    text-transform: uppercase;
+    background: #378999; 
+    opacity: .8;
+    -webkit-transition: opacity .5s ease-in-out;
+       -moz-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+}
+#submit:hover {
+    cursor: pointer;
+    opacity: 1;
+    -webkit-transition: opacity .5s ease-in-out;
+       -moz-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+}
+
+@media only screen and (max-width: 980px) {
+    .formContent {
+        width: 100%;
+        margin: 0 0%;
+        box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+    }
+    label, input, textarea {
+        width: 95%;
+        line-height: 2rem;
+        margin-top: 5%;
+    }    
+}
+
+@media only screen and (min-width: 981px) {
+    div.contacts a {
+        font-size: 1.2rem;
+    }
+    .formContent {
+        width: 60%;
+        margin: 0 20%;
+        box-shadow: 1px 3px 5px rgba(55,137,153,.3), -1px 0 5px rgba(55,137,153,.3);
+    }  
+    label, input, textarea {
+        width: 90%;
+        line-height: 1.5rem;
+        margin-top: 3%;
+    }
+}
+
+/*-------------------------------------------
+     10. Welcome Modal
+-------------------------------------------*/
+section#modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+}
+@media only screen and (max-width: 980px) {
+    section#modal div.PFBox {
+        max-height: 510px;
+    }
+}
+section#modal div.PFBox {
+    overflow-y: scroll;
+}
+section#modal div.PFBox div {
+    position: relative;
+    height: auto;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+section#modal img#imgWelcome {
+    margin: 15% auto 0;
+    padding: 2rem 0 0;
+    width: 200px;
+    height: 10px;
+    background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 8px -155px;
+    background-size: 100% auto;
+    box-shadow: none;
+    float: none;
+}
+section#modal p {
+    margin: 0 auto;
+    width: 80%;
+    padding: .5rem 0;
+    max-width: 600px;
+    text-align: justify;
+}
+section#modal button#contactMe {
+    display: block;
+    height: 2.3rem;
+    background: rgba(55,137,153,.6);
+    margin: 1rem auto;
+    padding: .5rem .7rem;
+    border-radius: 10px;
+    width: 135px;
+    font-size: 1rem;
+    transition: all .5s ease-out;
+}
+section#modal button#contactMe:hover {
+    cursor: pointer;
+    color: rgba(254,254,254,.9);
+    text-shadow: 1px 1px 0px rgba(21,21,20,.2);
+    font-weight: 400;
+    height: 3rem;
+    background: rgba(55,137,153,1);
+    transition: all .5s ease-out;
+}
+@media only screen and (min-width: 681px) {
+    section#modal div.PFBox div {
+        max-width: 70%;
+    }
+    section#modal p {
+       text-align: left;
+    }
+    section#modal button#contactMe {
+        bottom: -12%;
+        left: 35%;
+    }
+    section#modal img#imgWelcome {
+        margin: 10% auto 0;
+        padding: 2rem 0 0;
+        width: 350px;
+        height: 30px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 8px -275px;
+        background-size: 100% auto;
+    }
+}
+@media only screen and (min-width: 981px) {
+    section#modal div.PFBox div {
+    width: auto;
+    margin: 5% auto;
+    max-width: 80%;
+    border: 2px solid rgba(25,76,96,.6);
+    border-radius: 10px;
+}
+}
+@media only screen and (min-width: 981px) {
+    section#modal button#contactMe {
+        bottom: -10%;
+        left: 42%;
+    }
+    section#modal img#imgWelcome {
+        margin: 5% auto 0;
+        padding: 2rem 0 0;
+        width: 400px;
+        height: 40px;
+        background: url(http://www.annemariedufour.com/_img/spriteWords.png) no-repeat 8px -310px;
+        background-size: 100% auto;
+    }
+}
+
+
+/*-------------------------------------------
+     11. Footer
+-------------------------------------------*/
+footer {
+    background-color: rgba(55,137,153,.1); 
+    padding: 1rem 10%;
+}
+footer p {
+    width: 100%;
+    font-size: .8rem;
+    text-align: center;
+    padding: .5rem 0;
+}
+
+/*-------------------------------------------
+     12. Transitions & Animations
+-------------------------------------------*/
+.faded {
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+}
+.csstransitions .faded {
+    transition: opacity .5s ease-in-out;
+}
+.fadeIn {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+.csstransitions .faded {
+    transition: opacity 2s ease-in-out;
+}
+.cssanimations .moveLeft {
+    -webkit-animation: translateLeft 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+       -moz-animation: translateLeft 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+         -o-animation: translateLeft 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+            animation: translateLeft 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+}
+.cssanimations .moveCenter {
+    -webkit-animation: translateCenter 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+       -moz-animation: translateCenter 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+         -o-animation: translateCenter 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+            animation: translateCenter 1.5s cubic-bezier(0.455, 0.030, 0.470, 1.130) forwards;
+}
+.cssanimations .moveUp {
+    -webkit-animation: moveUp 1.5s ease-in-out forwards;
+       -moz-animation: moveUp 1.5s ease-in-out forwards;
+         -o-animation: moveUp 1.5s ease-in-out forwards;
+            animation: moveUp 1.5s ease-in-out forwards; 
+}
+.cssanimations .moveDown {
+    -webkit-animation: moveDown 1.5s ease-in-out forwards;
+       -moz-animation: moveDown 1.5s ease-in-out forwards;
+         -o-animation: moveDown 1.5s ease-in-out forwards;
+            animation: moveDown 1.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes moveUp {0% {top: 0;} 100%{top: -3.75rem;}}
+   @-moz-keyframes moveUp {0% {top: 0;} 100%{top: -3.75rem;}}
+     @-o-keyframes moveUp {0% {top: 0;} 100%{top: -3.75rem;}}
+        @keyframes moveUp {0% {top: 0;} 100%{top: -3.75rem;}}
+
+@-webkit-keyframes moveDown {0% {top: -3.75rem;} 100%{top: 0;}}
+   @-moz-keyframes moveDown {0% {top: -3.75rem;} 100%{top: 0;}}
+     @-o-keyframes moveDown {0% {top: -3.75rem;} 100%{top: 0;}}
+        @keyframes moveDown {0% {top: -3.75rem;} 100%{top: 0;}}
+
+@-webkit-keyframes openModal  {0% {-webkit-transform: scale(0);} 100% {-webkit-transform: scale(1);}}
+   @-moz-keyframes openModal  {0% {   -moz-transform: scale(0);} 100% {   -moz-transform: scale(1);}}
+     @-o-keyframes openModal  {0% {     -o-transform: scale(0);} 100% {     -o-transform: scale(1);}}
+        @keyframes openModal  {0% {        transform: scale(0);} 100% {        transform: scale(1);}}
+
+@-webkit-keyframes closeModal {0% {-webkit-transform: scale(1);} 100% {-webkit-transform: scale(0);}}
+   @-moz-keyframes closeModal {0% {   -moz-transform: scale(1);} 100% {   -moz-transform: scale(0);}}
+     @-o-keyframes closeModal {0% {     -o-transform: scale(1);} 100% {     -o-transform: scale(0);}}
+        @keyframes closeModal {0% {        transform: scale(1);} 100% {        transform: scale(0);}}
+
+@media only screen and (max-width: 980px) {
+    
+    @-webkit-keyframes translateLeft {0% {left: 25%;} 100%{left: -7%;}}
+       @-moz-keyframes translateLeft {0% {left: 25%;} 100%{left: -7%;}}
+         @-o-keyframes translateLeft {0% {left: 25%;} 100%{left: -7%;}}
+            @keyframes translateLeft {0% {left: 25%;} 100%{left: -7%;}}
+
+    @-webkit-keyframes translateCenter {0% {left: -7%;} 100%{left: 25%;}}
+       @-moz-keyframes translateCenter {0% {left: -7%;} 100%{left: 25%;}}
+         @-o-keyframes translateCenter {0% {left: -7%;} 100%{left: 25%;}}
+            @keyframes translateCenter {0% {left: -7%;} 100%{left: 25%;}}
+    
+}
+
+@media only screen and (min-width: 681px) and (max-width: 980px) {
+
+    @-webkit-keyframes translateLeft {0% {left: 35%;} 100%{left: -3%;}}
+       @-moz-keyframes translateLeft {0% {left: 35%;} 100%{left: -3%;}}
+         @-o-keyframes translateLeft {0% {left: 35%;} 100%{left: -3%;}}
+            @keyframes translateLeft {0% {left: 35%;} 100%{left: -3%;}}
+
+    @-webkit-keyframes translateCenter {0% {left: -3%;} 100%{left: 35%;}}
+       @-moz-keyframes translateCenter {0% {left: -3%;} 100%{left: 35%;}}
+         @-o-keyframes translateCenter {0% {left: -3%;} 100%{left: 35%;}}
+            @keyframes translateCenter {0% {left: -3%;} 100%{left: 35%;}}
+    
+}
+
+@media only screen and (min-width: 981px) {
+
+    @-webkit-keyframes translateLeft {0% {left: 34%;} 100%{left: 0%;}}
+       @-moz-keyframes translateLeft {0% {left: 34%;} 100%{left: 0%;}}
+         @-o-keyframes translateLeft {0% {left: 34%;} 100%{left: 0%;}}
+            @keyframes translateLeft {0% {left: 34%;} 100%{left: 0%;}}
+
+    @-webkit-keyframes translateCenter {0% {left: 0%;} 100%{left: 34%;}}
+       @-moz-keyframes translateCenter {0% {left: 0%;} 100%{left: 34%;}}
+         @-o-keyframes translateCenter {0% {left: 0%;} 100%{left: 34%;}}
+            @keyframes translateCenter {0% {left: 0%;} 100%{left: 34%;}} 
+
+}
